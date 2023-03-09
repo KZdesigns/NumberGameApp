@@ -3,14 +3,16 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 function PrimaryButton(props) {
   return (
     <View style={styles.OutterButtonContainer}>
-      <View style={styles.InnerButtonContainer}>
-        <Pressable
-          style={({ pressed }) => pressed && styles.ButtonPressed}
-          onPress={props.onPress}
-        >
-          <Text style={styles.ButtonText}>{props.children}</Text>
-        </Pressable>
-      </View>
+      <Pressable
+        style={({ pressed }) =>
+          pressed
+            ? [styles.InnerButtonContainer, styles.ButtonPressed]
+            : styles.InnerButtonContainer
+        }
+        onPress={props.onPress}
+      >
+        <Text style={styles.ButtonText}>{props.children}</Text>
+      </Pressable>
     </View>
   );
 }
@@ -33,6 +35,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   ButtonPressed: {
-    opacity: "0.5",
+    opacity: "0.75",
   },
 });
