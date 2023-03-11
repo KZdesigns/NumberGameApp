@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary,
   },
   ButtonText: {
+    fontFamily: "open-sans",
     color: Colors.primary,
     textAlign: "center",
   },
