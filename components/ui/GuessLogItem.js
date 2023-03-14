@@ -5,7 +5,7 @@ function GuessLogItem(props) {
   return (
     <View style={styles.LogTextContainer}>
       <Text style={styles.LogText}>
-        #{props.round + 1}: Opponent's guess was {props.guess}!
+        Your opponent's last guess was {props.guess}!
       </Text>
     </View>
   );
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   LogTextContainer: {
     borderWidth: 3,
     borderRadius: 50,
-    padding: 15,
+    padding: 12,
     margin: 10,
     borderColor: Colors.primary,
     backgroundColor: Colors.secondary,

@@ -1,4 +1,4 @@
-//import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 import { useState, useCallback } from "react";
 import { StyleSheet, ImageBackground, SafeAreaView, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -69,23 +69,26 @@ export default function App() {
   }
 
   return (
-    <View style={styles.RootBackground} onLayout={onLayoutRootView}>
-      <LinearGradient
-        style={styles.RootBackground}
-        colors={[Colors.primary, Colors.secondary]}
-        locations={[0.9, 0.2]}
-      >
-        <ImageBackground
-          source={require("./assets/images/background.png")}
-          resizeMode="cover"
+    <>
+      <StatusBar style="light" />
+      <View style={styles.RootBackground} onLayout={onLayoutRootView}>
+        <LinearGradient
           style={styles.RootBackground}
-          imageStyle={styles.RootBackgroundImage}
+          colors={[Colors.primary, Colors.secondary]}
+          locations={[0.9, 0.2]}
         >
-          {/* <SafeAreaView styles={styles.RootBackground}>{screen}</SafeAreaView> */}
-          <SafeAreaView style={styles.RootBackground}>{screen}</SafeAreaView>
-        </ImageBackground>
-      </LinearGradient>
-    </View>
+          <ImageBackground
+            source={require("./assets/images/background.png")}
+            resizeMode="cover"
+            style={styles.RootBackground}
+            imageStyle={styles.RootBackgroundImage}
+          >
+            {/* <SafeAreaView styles={styles.RootBackground}>{screen}</SafeAreaView> */}
+            <SafeAreaView style={styles.RootBackground}>{screen}</SafeAreaView>
+          </ImageBackground>
+        </LinearGradient>
+      </View>
+    </>
   );
 }
 
